@@ -16,7 +16,7 @@ function figmaAssetPlugin(): Plugin {
       }
       return null
     },
-    load(id) {
+    load(id, options) {
       // Handle the virtual module ID
       if (id.startsWith('\0figma:asset/')) {
         const actualId = id.replace('\0', '')
@@ -34,9 +34,9 @@ function figmaAssetPlugin(): Plugin {
         const publicPath = path.resolve(assetsDir, filename)
         
         if (fs.existsSync(publicPath)) {
-          // Return the actual asset path - Vite will serve from public directory
-          // Use absolute path with /assets/ prefix since files are in public/assets/
-          return `export default ${JSON.stringify(`/assets/${filename}`)}`
+          // Get the base URL from Vite config to respect GitHub Pages base path
+          // Use import.meta.env.BASE_URL to ensure the path works with the configured base
+          return `export default import.meta.env.BASE_URL + ${JSON.stringify('assets/' + filename)}`
         }
         
         // Return a placeholder data URL for missing assets

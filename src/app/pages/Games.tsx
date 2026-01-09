@@ -4,6 +4,13 @@ import closeSvgPaths from "../../imports/svg-sihut6nwql";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 
+// Helper function to get asset URL with base path support
+const getAssetUrl = (path: string): string => {
+  // Remove leading slash if present, then prepend base URL
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return `${import.meta.env.BASE_URL}${cleanPath}`;
+};
+
 function DirectoryHeader() {
   const StatusIndicator = ({ letter }: { letter: string }) => (
     <div className="relative size-[88.409px] flex items-center justify-center">
@@ -178,7 +185,7 @@ function GameItem({ game, isExpanded, onToggle }: { game: GameData; isExpanded: 
                   {game.images.map((image, idx) => (
                     <div key={idx} className="flex flex-col">
                       <div className="border-[4px] border-[#f27244] rounded-lg overflow-hidden bg-gray-800">
-                        <img src={encodeURI(image.url)} alt={`${game.title} screenshot ${idx + 1}`} className="w-full h-full object-cover" />
+                        <img src={getAssetUrl(image.url)} alt={`${game.title} screenshot ${idx + 1}`} className="w-full h-full object-cover" />
                       </div>
                       {image.caption && (
                         <p className="font-['Sofia_Sans:SemiBold',sans-serif] font-semibold text-[20px] text-black mt-2">
