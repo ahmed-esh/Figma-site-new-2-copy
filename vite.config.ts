@@ -6,9 +6,15 @@ import fs from 'fs'
 
 // Plugin to handle Figma asset imports
 function figmaAssetPlugin(): Plugin {
+  let basePath = '/'
+  
   return {
     name: 'figma-asset-plugin',
     enforce: 'pre', // Run this plugin before others
+    configResolved(config) {
+      // Capture the base path from Vite config
+      basePath = config.base || '/'
+    },
     resolveId(id) {
       if (id.startsWith('figma:asset/')) {
         // Return a virtual module ID that we can handle
@@ -34,9 +40,11 @@ function figmaAssetPlugin(): Plugin {
         const publicPath = path.resolve(assetsDir, filename)
         
         if (fs.existsSync(publicPath)) {
-          // Get the base URL from Vite config to respect GitHub Pages base path
-          // Use import.meta.env.BASE_URL to ensure the path works with the configured base
-          return `export default import.meta.env.BASE_URL + ${JSON.stringify('assets/' + filename)}`
+          // Build the asset path with the base path from config
+          // Ensure basePath ends with / and assets path doesn't start with /
+          const base = basePath.endsWith('/') ? basePath : basePath + '/'
+          const assetUrl = base + 'assets/' + filename
+          return `export default ${JSON.stringify(assetUrl)}`
         }
         
         // Return a placeholder data URL for missing assets
