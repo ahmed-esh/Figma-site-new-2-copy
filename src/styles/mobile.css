@@ -1,0 +1,454 @@
+/* Mobile Responsive Styles for screens up to 440px width */
+/* Target viewport size: 440x956 */
+
+@media (max-width: 440px) {
+  /* Header - Reduce height and scale down elements */
+  header,
+  [class*="h-[120px]"] {
+    height: 60px !important;
+    min-height: 60px !important;
+    max-height: 60px !important;
+  }
+
+  /* Header padding adjustments */
+  [class*="px-[15px]"],
+  [class*="px-[13px]"] {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  [class*="pr-[30px]"] {
+    padding-right: 8px !important;
+  }
+
+  /* Header camel icons - reduce size */
+  [data-name="camel icon 1"],
+  [data-name="camel icon 2"],
+  [data-name="camel icon 3"] {
+    height: 40px !important;
+    width: 30px !important;
+    min-height: 40px !important;
+    min-width: 30px !important;
+  }
+
+  /* Header camel icon positioning adjustments */
+  [class*="ml-[80px]"] {
+    margin-left: 20px !important;
+  }
+
+  [class*="ml-[40px]"] {
+    margin-left: 10px !important;
+  }
+
+  /* Navigation container adjustments */
+  [class*="h-[62px]"] {
+    height: auto !important;
+    width: auto !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 12px !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    position: relative !important;
+  }
+
+  /* Navigation links */
+  [class*="h-[62px]"] > a,
+  [class*="h-[62px]"] a {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    font-size: 16px !important;
+  }
+
+  /* Hide navigation separators on mobile */
+  [class*="h-[62px]"] > div[class*="absolute"],
+  [class*="h-[62px]"] > div[class*="bg-"]:not([class*="ml-"]) {
+    display: none !important;
+  }
+
+  /* Footer adjustments */
+  footer {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 12px 8px !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    align-items: center !important;
+  }
+
+  [class*="h-[67px]"] {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 12px 8px !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    align-items: center !important;
+  }
+
+  /* Footer text */
+  [class*="text-[28.194px]"] {
+    font-size: 14px !important;
+  }
+
+  /* Footer social links container */
+  [class*="h-[67px]"] .grid,
+  [class*="grid-cols"]:has(a) {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px !important;
+    align-items: center !important;
+  }
+
+  [class*="h-[67px]"] .grid > *,
+  [class*="grid-cols"]:has(a) > * {
+    position: static !important;
+    margin: 0 !important;
+    font-size: 14px !important;
+  }
+
+  /* Hide footer separators */
+  [class*="h-[67px]"] .grid > div[class*="bg-"]:not(a) {
+    display: none !important;
+  }
+
+  /* Home Page Title */
+  [class*="text-[126.226px]"] {
+    font-size: 42px !important;
+    line-height: 1.1 !important;
+    width: auto !important;
+    max-width: 100% !important;
+  }
+
+  /* Camel image on home page */
+  [class*="h-[429px]"][class*="w-[290px]"] {
+    height: 180px !important;
+    width: 125px !important;
+    min-height: 180px !important;
+    min-width: 125px !important;
+  }
+
+  /* Home page container padding */
+  [class*="px-[72px]"],
+  [class*="py-[57px]"] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  /* Home page flex gap adjustments */
+  [class*="gap-[219px]"] {
+    gap: 20px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* Home page subtitle and description */
+  [class*="text-[39.81px]"] {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+  }
+
+  [class*="px-[19px]"],
+  [class*="py-[33px]"] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+
+  [class*="gap-[7px]"] {
+    gap: 12px !important;
+  }
+
+  /* About Page Title */
+  [class*="text-[166.36px]"] {
+    font-size: 48px !important;
+    line-height: 1.1 !important;
+  }
+
+  [class*="px-[95px]"],
+  [class*="py-[23px]"] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+
+  /* About images section */
+  [class*="gap-[355px]"],
+  [class*="px-[168px]"],
+  [class*="py-[90px]"] {
+    gap: 20px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  [class*="h-[613px]"][class*="w-[460px]"] {
+    height: auto !important;
+    width: 100% !important;
+    max-width: 380px !important;
+    aspect-ratio: 460 / 613 !important;
+  }
+
+  /* About text content */
+  [class*="text-[50px]"] {
+    font-size: 18px !important;
+    line-height: 1.6 !important;
+  }
+
+  [class*="gap-[50px]"] {
+    gap: 24px !important;
+  }
+
+  /* About contact section */
+  [class*="h-[100px]"][class*="w-[1274px]"] {
+    height: auto !important;
+    width: 100% !important;
+    padding: 16px !important;
+    min-height: 80px !important;
+  }
+
+  [class*="text-[39.619px]"] {
+    font-size: 16px !important;
+  }
+
+  /* Reset all large margins on mobile */
+  [class*="mt-[150px]"],
+  [class*="mt-[124px]"],
+  [class*="mt-[174px]"],
+  [class*="mt-[175px]"] {
+    margin-top: 0 !important;
+  }
+
+  [class*="ml-[37px]"],
+  [class*="ml-[385px]"],
+  [class*="ml-[288px]"],
+  [class*="ml-[771px]"],
+  [class*="ml-[1084px]"],
+  [class*="ml-[162px]"],
+  [class*="ml-[139px]"] {
+    margin-left: 0 !important;
+  }
+
+  /* Contact section - convert grid to flex */
+  [class*="inline-grid"]:has([class*="bg-[#f27244]"]) {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding: 16px !important;
+  }
+
+  [class*="inline-grid"] > * {
+    position: static !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  [class*="h-[268px]"][class*="w-[181px]"] {
+    height: 120px !important;
+    width: 81px !important;
+    align-self: center !important;
+    margin-top: 8px !important;
+  }
+
+  /* Games Page Directory header */
+  [class*="h-[88.41px]"],
+  [class*="h-[88"] {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 12px 16px !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  [class*="size-[88.409px]"],
+  [class*="size-[88"] {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  [class*="size-[88"] p {
+    font-size: 16px !important;
+  }
+
+  /* Games page text sizes */
+  [class*="text-[52px]"]:not([class*="text-[126"]) {
+    font-size: 20px !important;
+  }
+
+  [class*="px-[54px]"] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Game items */
+  [class*="max-w-[1399px]"] {
+    max-width: 100% !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  [class*="h-[125.327px]"] {
+    height: auto !important;
+    min-height: 60px !important;
+    padding: 12px !important;
+  }
+
+  [class*="text-[38.491px]"] {
+    font-size: 20px !important;
+  }
+
+  [class*="text-[28px]"]:not([class*="text-[28.194"]) {
+    font-size: 16px !important;
+  }
+
+  [class*="border-[5.829px]"] {
+    border-width: 3px !important;
+  }
+
+  [class*="rounded-[39.833px]"] {
+    border-radius: 16px !important;
+  }
+
+  /* Game expanded view - single column */
+  .grid-cols-2 {
+    grid-template-columns: 1fr !important;
+  }
+
+  [class*="text-[20px]"] {
+    font-size: 14px !important;
+  }
+
+  [class*="text-[18px]"] {
+    font-size: 12px !important;
+  }
+
+  [class*="text-[24px]"] {
+    font-size: 16px !important;
+  }
+
+  [class*="text-[16px]"] {
+    font-size: 12px !important;
+  }
+
+  /* Films Page */
+  [class*="py-[80px]"] {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+
+  [class*="px-[80px]"] {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  [class*="gap-[80px]"] {
+    gap: 24px !important;
+  }
+
+  [class*="h-[540px]"][class*="w-[730px]"] {
+    height: 240px !important;
+    width: calc(100vw - 32px) !important;
+    max-width: 400px !important;
+    min-width: 280px !important;
+  }
+
+  [class*="border-[6px]"] {
+    border-width: 3px !important;
+  }
+
+  /* General spacing adjustments */
+  [class*="gap-[45px]"] {
+    gap: 24px !important;
+  }
+
+  [class*="gap-[29px]"] {
+    gap: 16px !important;
+  }
+
+  /* Ensure images are responsive */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Fix text wrapping where appropriate */
+  .text-nowrap {
+    white-space: normal !important;
+  }
+
+  /* Max width constraints - remove on mobile */
+  [class*="max-w-[1180px]"],
+  [class*="max-w-[1393px]"],
+  [class*="max-w-[1440px]"],
+  [class*="max-w-[1265px]"],
+  [class*="max-w-[1261px]"],
+  [class*="max-w-[1274px]"] {
+    max-width: 100% !important;
+  }
+
+  /* Ensure proper scrolling on mobile */
+  body {
+    overflow-x: hidden !important;
+  }
+
+  /* Adjust padding/margins globally on mobile */
+  .px-4 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Button and link adjustments */
+  [class*="px-6"],
+  [class*="py-3"] {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+
+  /* Touch target improvements */
+  a, button {
+    min-height: 44px !important;
+    min-width: 44px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Better scrolling on Films page */
+  [class*="overflow-x-auto"] {
+    -webkit-overflow-scrolling: touch !important;
+    scroll-snap-type: x mandatory !important;
+  }
+
+  [class*="overflow-x-auto"] > div {
+    scroll-snap-align: start !important;
+  }
+
+  /* Prevent horizontal scroll on body */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+
+  /* Ensure proper text sizing */
+  p {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Status indicator on Games page */
+  [class*="size-[88"] .flex-none {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
