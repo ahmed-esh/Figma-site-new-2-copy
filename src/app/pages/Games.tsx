@@ -248,6 +248,23 @@ export function Games() {
 
   const games: GameData[] = [
     {
+      title: "KinFight",
+      type: "Physical-Digital Play Installation",
+      status: 'W',
+      description: `KinFight is a short-form physical-digital game designed as a museum installation for children. Players use their bodies as controllers, performing improvised fighting moves that are captured and transformed into animated, ragdoll-style duels projected on a screen. Each round lasts about twenty seconds, encouraging spontaneity, humor, and repeat play.
+
+The game emphasizes expression over competition. Exaggerated physics and abstract characters turn "fighting" into playful performance rather than violence. KinFight uses movement, laughter, and spectacle to invite kids to see their bodies as tools for creativity and connection.`,
+      images: [
+        { url: '/assets/5994826042666847142.jpg', caption: "Installation in the Smithsonian African American Museum" }
+      ],
+      details: [
+        { label: "Players", value: "2" },
+        { label: "Duration", value: "~20 seconds per round, infinite rounds" },
+        { label: "Year", value: "2025" },
+        { label: "Team Size", value: "2 Game Designers" }
+      ]
+    },
+    {
       title: "Sweet and Sour Reunion",
       type: "Improv Party Game",
       status: 'P',
