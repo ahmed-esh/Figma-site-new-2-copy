@@ -296,7 +296,7 @@ Each player has a Role and Personality. They must follow their Role card and pla
 
 The game emphasizes expression over competition. Exaggerated physics and abstract characters turn "fighting" into playful performance rather than violence. KinFight uses movement, laughter, and spectacle to invite kids to see their bodies as tools for creativity and connection.`,
       images: [
-        { url: '/assets/5994826042666847142.jpg', caption: "Case study. Reference image shown to indicate intended look and feel. Image not my own." }
+        { url: '/assets/5994826042666847142.jpg', caption: "case study an Installation in the Smithsonian African American Museum, similiar look and feel" }
       ],
       details: [
         { label: "Players", value: "2" },
