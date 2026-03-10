@@ -260,8 +260,8 @@ After a player initiates the topic, everyone is given a limited amount of time i
 
 Each player has a Role and Personality. They must follow their Role card and play that member of the family, and play out their personality to the best of their ability.`,
       images: [
-        { url: '/assets/ghghg.jpg', caption: "Sweet and Sour Reunion photo" },
-        { url: '/assets/IMG_5971.jpg', caption: "Sweet and Sour Reunion photo" }
+        { url: '/assets/ghghg.jpg', caption: "sweet and sour reunion playtest" },
+        { url: '/assets/IMG_5971.jpg', caption: "sweet and sour reunion playtest" }
       ],
       details: [
         { label: "Players", value: "4-6" },
