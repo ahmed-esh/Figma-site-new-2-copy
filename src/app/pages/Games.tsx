@@ -271,6 +271,27 @@ Each player has a Role and Personality. They must follow their Role card and pla
       ]
     },
     {
+      title: "Drop a Camel",
+      type: "Idle game",
+      status: 'W',
+      description: `Drop a Camel is an idle game where every camel matters.
+Drop camels manually to build your first herd, then grow a self-running desert economy through caravans, farms, hunts, races, banquets, universities, and mining grounds. Time advances in-game, processes complete over days, and your choices shape how quickly your settlement scales.
+At first, progression is simple: click to spawn falling camels and unlock core systems. As your population grows, you can send caravans for silver, gold, and rare hotdogs, invest in farms and mines, and manage upkeep decisions to keep production stable.`,
+      images: [
+        { url: '/assets/Screenshot 2026-02-23 at 11.51.45 PM.png', caption: "in game footage" },
+        { url: '/assets/specsopsmnmnmnm233.gif', caption: "in game footage" }
+      ],
+      links: [
+        { label: "Play on web", url: "https://ahmed-esh.github.io/Camel-game/" }
+      ],
+      details: [
+        { label: "Engine", value: "JavaScript" },
+        { label: "Duration", value: "~" },
+        { label: "Year", value: "2026" },
+        { label: "Team Size", value: "Solo" }
+      ]
+    },
+    {
       title: "Sbitar",
       type: "Digital Horror Game",
       status: 'A',
