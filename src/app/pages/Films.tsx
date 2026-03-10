@@ -1,4 +1,5 @@
-import { Link, useLocation } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import imgCamelIcon1 from "figma:asset/be97a5231acf8c30bd64cf03901ee9e98e447c9b.png";
 
 function FilmHeader() {
@@ -81,6 +82,8 @@ function FilmCard({ film, index }: { film: Film; index: number }) {
 }
 
 export function Films() {
+  const filmSliderRef = useRef<HTMLDivElement>(null);
+
   // Helper function to convert YouTube URL to embed URL
   const getYouTubeEmbedUrl = (url: string) => {
     const videoId = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/)?.[1];
@@ -116,11 +119,77 @@ export function Films() {
     }
   ];
 
+  useEffect(() => {
+    const sliderElement = filmSliderRef.current;
+    if (!sliderElement) {
+      return;
+    }
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) {
+      return;
+    }
+
+    let animationFrameId = 0;
+    let isCancelled = false;
+    const demoDurationMs = 5000;
+    const maxScrollDistance = sliderElement.scrollWidth - sliderElement.clientWidth;
+    const targetDistance = Math.min(maxScrollDistance * 0.55, 520);
+
+    if (targetDistance <= 0) {
+      return;
+    }
+
+    const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+    const clamp = (value: number, min: number, max: number) => Math.max(min, Math.min(value, max));
+    const startTime = performance.now();
+
+    const cancelAnimation = () => {
+      isCancelled = true;
+      cancelAnimationFrame(animationFrameId);
+    };
+
+    const animateDemo = (now: number) => {
+      if (isCancelled) {
+        return;
+      }
+
+      const elapsedTime = now - startTime;
+      const overallProgress = clamp(elapsedTime / demoDurationMs, 0, 1);
+
+      const travelPhase = Math.min(overallProgress / 0.52, 1);
+      const forwardTravel = targetDistance * easeOutCubic(travelPhase);
+
+      const bouncePhaseProgress = clamp((overallProgress - 0.52) / 0.48, 0, 1);
+      const bounceAmplitude = 100 * (1 - bouncePhaseProgress);
+      const bounceOffset = Math.sin(bouncePhaseProgress * Math.PI * 4.5) * bounceAmplitude;
+
+      sliderElement.scrollLeft = clamp(forwardTravel + bounceOffset, 0, maxScrollDistance);
+
+      if (overallProgress < 1) {
+        animationFrameId = requestAnimationFrame(animateDemo);
+      }
+    };
+
+    animationFrameId = requestAnimationFrame(animateDemo);
+
+    sliderElement.addEventListener("wheel", cancelAnimation, { passive: true });
+    sliderElement.addEventListener("touchstart", cancelAnimation, { passive: true });
+    sliderElement.addEventListener("pointerdown", cancelAnimation, { passive: true });
+
+    return () => {
+      cancelAnimation();
+      sliderElement.removeEventListener("wheel", cancelAnimation);
+      sliderElement.removeEventListener("touchstart", cancelAnimation);
+      sliderElement.removeEventListener("pointerdown", cancelAnimation);
+    };
+  }, []);
+
   return (
     <div className="bg-[#260101] content-stretch flex flex-col items-start relative min-h-screen w-full">
       <FilmHeader />
       
-      <div className="bg-[#260101] flex-1 overflow-x-auto overflow-y-hidden py-[80px] w-full">
+      <div ref={filmSliderRef} className="bg-[#260101] flex-1 overflow-x-auto overflow-y-hidden py-[80px] w-full">
         <div className="flex gap-[80px] px-[80px] h-full items-center">
           {films.map((film, index) => (
             <FilmCard key={index} film={film} index={index} />

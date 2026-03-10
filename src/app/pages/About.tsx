@@ -44,7 +44,7 @@ export function About() {
             </div>
           </div>
         </div>
-        <div className="[grid-area:1_/_1] flex h-[11px] items-center justify-center ml-[771px] mt-[175px] relative w-[224px]" style={{ "--transform-inner-width": "0", "--transform-inner-height": "0" } as React.CSSProperties}>
+        <div className="[grid-area:1_/_1] flex h-[11px] items-center justify-center ml-[811px] mt-[175px] relative w-[224px]" style={{ "--transform-inner-width": "0", "--transform-inner-height": "0" } as React.CSSProperties}>
           <div className="flex-none rotate-[2.811deg]">
             <div className="h-0 relative w-[224.27px]">
               <div className="absolute inset-[-7.36px_-0.45%_-7.36px_0]">
