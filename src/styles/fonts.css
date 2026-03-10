@@ -10,10 +10,8 @@
 }
 
 @font-face {
-  font-family: 'IndoorKidWide';
-  src:
-    url('../Fonts/body/IndoorKidWide-Regular.woff2') format('woff2'),
-    url('../Fonts/body/IndoorKidWide-Regular.woff') format('woff');
+  font-family: 'Marcellus';
+  src: url('../Fonts/body/Marcellus-Regular.ttf') format('truetype');
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -21,7 +19,7 @@
 
 :root {
   --site-title-font-family: 'Kuhlman Variable', 'Sofia Sans', sans-serif;
-  --site-body-font-family: 'IndoorKidWide', 'Sofia Sans', sans-serif;
+  --site-body-font-family: 'Marcellus', 'Sofia Sans', sans-serif;
 }
 
 html,

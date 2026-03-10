@@ -93,8 +93,8 @@ function GameItem({ game, isExpanded, onToggle }: { game: GameData; isExpanded: 
           {/* Header with title and close button */}
           <div className="flex items-start justify-between mb-6">
             <div>
-              <p className="font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] text-[38.491px] text-black mb-2">{game.title}</p>
-              <p className="font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] text-[28px] text-black">{game.type}</p>
+              <p className="site-body-font font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] text-[38.491px] text-black mb-2">{game.title}</p>
+              <p className="site-body-font font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] text-[28px] text-black">{game.type}</p>
             </div>
             <div className="flex items-center gap-4">
               <div className="relative size-[88.409px] flex items-center justify-center flex-shrink-0">
@@ -210,9 +210,9 @@ function GameItem({ game, isExpanded, onToggle }: { game: GameData; isExpanded: 
       aria-label={`${isExpanded ? 'Close' : 'Open'} ${game.title}`}
     >
       <div className="flex items-center gap-4 flex-1 min-w-0">
-        <p className="font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] text-[38.491px] text-black text-nowrap">{game.title}</p>
+        <p className="site-body-font font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] text-[38.491px] text-black text-nowrap">{game.title}</p>
         <div className="bg-[#f27244] w-[1px] h-[40px] flex-shrink-0" />
-        <p className="font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] text-[38.491px] text-black text-nowrap">{game.type}</p>
+        <p className="site-body-font font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] text-[38.491px] text-black text-nowrap">{game.type}</p>
       </div>
       <div className="flex items-center justify-center relative flex-shrink-0">
         <div className="flex-none rotate-[180deg] size-[88.409px]">
