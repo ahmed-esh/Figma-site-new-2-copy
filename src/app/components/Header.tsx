@@ -8,6 +8,8 @@ export function Header() {
   const bgColor = currentPath === '/games' ? 'bg-[#acdef2]' : currentPath === '/films' ? 'bg-[#260101]' : 'bg-[#f2dabd]';
   const textColor = currentPath === '/films' ? 'text-[#ffffff]' : 'text-[#260101]';
   const separatorColor = currentPath === '/films' ? 'bg-[#73c6d9]' : 'bg-[#f27244]';
+  const getNavClassName = (path: string, leftClassName: string) =>
+    `nav-link site-header-font absolute font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] ${leftClassName} ${textColor} text-[52px] text-nowrap top-0 hover:opacity-80 transition-opacity ${currentPath === path ? 'nav-link-active' : ''}`;
 
   return (
     <div className={`${bgColor} content-stretch flex h-[120px] items-center justify-between overflow-clip px-[15px] pr-[30px] py-0 relative shrink-0 w-full`}>
@@ -23,9 +25,9 @@ export function Header() {
         </div>
       </Link>
       <div className="h-[62px] relative shrink-0 w-[519px]">
-        <Link to="/games" className={`absolute font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] left-0 ${textColor} text-[52px] text-nowrap top-0 hover:opacity-80 transition-opacity`}>Games</Link>
-        <Link to="/films" className={`absolute font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] left-[210px] ${textColor} text-[52px] text-nowrap top-0 hover:opacity-80 transition-opacity`}>Films</Link>
-        <Link to="/about" className={`absolute font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] left-[384px] ${textColor} text-[52px] text-nowrap top-0 hover:opacity-80 transition-opacity`}>About</Link>
+        <Link to="/games" className={getNavClassName('/games', 'left-[-10px]')}>Games</Link>
+        <Link to="/films" className={getNavClassName('/films', 'left-[194px]')}>Films</Link>
+        <Link to="/about" className={getNavClassName('/about', 'left-[366px]')}>About</Link>
         <div className={`absolute ${separatorColor} h-[20px] left-[179px] top-[24px] w-[10px]`} />
         <div className={`absolute ${separatorColor} h-[20px] left-[351px] top-[24px] w-[10px]`} />
       </div>

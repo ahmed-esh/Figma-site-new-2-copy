@@ -1,8 +1,13 @@
 import { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import imgCamelIcon1 from "figma:asset/be97a5231acf8c30bd64cf03901ee9e98e447c9b.png";
 
 function FilmHeader() {
+  const location = useLocation();
+  const currentPath = location.pathname;
+  const getNavClassName = (path: string, leftClassName: string) =>
+    `nav-link site-header-font absolute font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] ${leftClassName} text-[#ffffff] text-[52px] text-nowrap top-0 hover:opacity-80 transition-opacity ${currentPath === path ? 'nav-link-active' : ''}`;
+
   return (
     <div className="bg-[#260101] content-stretch flex h-[120px] items-center justify-between overflow-clip px-[15px] pr-[30px] py-0 relative shrink-0 w-full">
       <Link to="/" className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
@@ -17,9 +22,9 @@ function FilmHeader() {
         </div>
       </Link>
       <div className="h-[62px] relative shrink-0 w-[519px] pr-[20px]">
-        <Link to="/games" className="absolute font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] left-0 text-[#ffffff] text-[52px] text-nowrap top-0 hover:opacity-80 transition-opacity">Games</Link>
-        <Link to="/films" className="absolute font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] left-[210px] text-[#ffffff] text-[52px] text-nowrap top-0 hover:opacity-80 transition-opacity">Films</Link>
-        <Link to="/about" className="absolute font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] left-[384px] text-[#ffffff] text-[52px] text-nowrap top-0 hover:opacity-80 transition-opacity">About</Link>
+        <Link to="/games" className={getNavClassName('/games', 'left-[-10px]')}>Games</Link>
+        <Link to="/films" className={getNavClassName('/films', 'left-[194px]')}>Films</Link>
+        <Link to="/about" className={getNavClassName('/about', 'left-[366px]')}>About</Link>
         <div className="absolute bg-[#73c6d9] h-[20px] left-[179px] top-[24px] w-[10px]" />
         <div className="absolute bg-[#73c6d9] h-[20px] left-[351px] top-[24px] w-[10px]" />
       </div>
@@ -30,13 +35,13 @@ function FilmHeader() {
 function FilmFooter() {
   return (
     <div className="bg-[#260101] content-stretch flex h-[67px] items-center justify-between overflow-clip px-[13px] py-[31px] relative shrink-0 w-full">
-      <p className="font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[28.194px] text-nowrap text-white">©Ahmed Shuwehdi 2026</p>
+      <p className="site-footer-font font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] relative shrink-0 text-[28.194px] text-nowrap text-white">©Ahmed Shuwehdi 2026</p>
       <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
-        <a className="[grid-area:1_/_1] block cursor-pointer font-['Sofia_Sans:SemiBold',sans-serif] font-semibold ml-[162px] mt-0 relative text-[28.194px] text-nowrap text-white hover:opacity-80 transition-opacity" href="https://www.linkedin.com/in/ahmed-shuwehdi-5130a819b/" target="_blank" rel="noopener noreferrer">
+        <a className="site-footer-font [grid-area:1_/_1] block cursor-pointer font-['Sofia_Sans:SemiBold',sans-serif] font-semibold ml-[162px] mt-0 relative text-[28.194px] text-nowrap text-white hover:opacity-80 transition-opacity" href="https://www.linkedin.com/in/ahmed-shuwehdi-5130a819b/" target="_blank" rel="noopener noreferrer">
           <p className="leading-[normal]">linkedin</p>
         </a>
         <div className="[grid-area:1_/_1] bg-[#73c6d9] h-[20px] ml-[139px] mt-[6.5px] w-[10px]" />
-        <a className="[grid-area:1_/_1] block cursor-pointer font-['Sofia_Sans:SemiBold',sans-serif] font-semibold ml-0 mt-[1.5px] relative text-[28.194px] text-nowrap text-white hover:opacity-80 transition-opacity" href="https://www.instagram.com/ahmed.eshhh/" target="_blank" rel="noopener noreferrer">
+        <a className="site-footer-font [grid-area:1_/_1] block cursor-pointer font-['Sofia_Sans:SemiBold',sans-serif] font-semibold ml-0 mt-[1.5px] relative text-[28.194px] text-nowrap text-white hover:opacity-80 transition-opacity" href="https://www.instagram.com/ahmed.eshhh/" target="_blank" rel="noopener noreferrer">
           <p className="leading-[normal]">Instagram</p>
         </a>
       </div>

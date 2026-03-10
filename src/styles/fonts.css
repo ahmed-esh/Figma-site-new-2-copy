@@ -9,26 +9,69 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'IndoorKidWide';
+  src:
+    url('../Fonts/body/IndoorKidWide-Regular.woff2') format('woff2'),
+    url('../Fonts/body/IndoorKidWide-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
-  --site-font-family: 'Kuhlman Variable', 'Sofia Sans', sans-serif;
+  --site-title-font-family: 'Kuhlman Variable', 'Sofia Sans', sans-serif;
+  --site-body-font-family: 'IndoorKidWide', 'Sofia Sans', sans-serif;
 }
 
 html,
 body,
-#root,
-button,
-input,
-textarea,
-select,
-a,
-p,
-span,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-div {
-  font-family: var(--site-font-family) !important;
+#root {
+  font-family: var(--site-body-font-family);
+}
+
+/* Generated title classes should keep the original title font. */
+[class*="font-['Sofia_Sans:SemiBold'"],
+[class*="font-['Sofia_Sans:ExtraBold'"] {
+  font-family: var(--site-title-font-family) !important;
+}
+
+/* Generated regular body classes should use the new body font. */
+[class*="font-['Sofia_Sans:Regular'"] {
+  font-family: var(--site-body-font-family) !important;
+}
+
+.site-header-font {
+  font-family: var(--site-title-font-family) !important;
+}
+
+.site-footer-font,
+.site-body-font {
+  font-family: var(--site-body-font-family) !important;
+}
+
+@keyframes navTitleGlow {
+  0%,
+  100% {
+    text-shadow:
+      0 0 0 currentColor,
+      0 0 0 currentColor;
+  }
+  50% {
+    text-shadow:
+      0 0 8px currentColor,
+      0 0 16px currentColor;
+  }
+}
+
+.nav-link {
+  transition: opacity 200ms ease, transform 240ms ease, text-shadow 280ms ease;
+}
+
+.nav-link:hover {
+  transform: translateY(-1px);
+}
+
+.nav-link-active {
+  animation: navTitleGlow 2.2s ease-in-out infinite;
 }
