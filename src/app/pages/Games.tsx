@@ -130,6 +130,26 @@ function GameItem({ game, isExpanded, onToggle }: { game: GameData; isExpanded: 
           </div>
 
           <div onClick={(e) => e.stopPropagation()}>
+            {/* Images - shown first under the title area */}
+            {game.images && game.images.length > 0 && (
+              <div className="mb-8">
+                <div className="grid grid-cols-2 gap-4">
+                  {game.images.map((image, idx) => (
+                    <div key={idx} className="flex flex-col">
+                      <div className="border-[4px] border-[#f27244] rounded-lg overflow-hidden bg-gray-800">
+                        <img src={getAssetUrl(image.url)} alt={`${game.title} screenshot ${idx + 1}`} className="w-full h-full object-cover" />
+                      </div>
+                      {image.caption && (
+                        <p className="font-['Sofia_Sans:SemiBold',sans-serif] font-semibold text-[20px] text-black mt-2">
+                          {image.caption}
+                        </p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Description */}
             <p className="font-['Sofia_Sans:Regular',sans-serif] font-normal leading-[normal] text-[24px] text-black mb-8">
               {game.description}
@@ -178,25 +198,6 @@ function GameItem({ game, isExpanded, onToggle }: { game: GameData; isExpanded: 
               </div>
             )}
 
-            {/* Images - placed at the bottom */}
-            {game.images && game.images.length > 0 && (
-              <div className="mt-8 pt-8 border-t-[3px] border-[#f27244]">
-                <div className="grid grid-cols-2 gap-4">
-                  {game.images.map((image, idx) => (
-                    <div key={idx} className="flex flex-col">
-                      <div className="border-[4px] border-[#f27244] rounded-lg overflow-hidden bg-gray-800">
-                        <img src={getAssetUrl(image.url)} alt={`${game.title} screenshot ${idx + 1}`} className="w-full h-full object-cover" />
-                      </div>
-                      {image.caption && (
-                        <p className="font-['Sofia_Sans:SemiBold',sans-serif] font-semibold text-[20px] text-black mt-2">
-                          {image.caption}
-                        </p>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </div>
@@ -259,8 +260,8 @@ After a player initiates the topic, everyone is given a limited amount of time i
 
 Each player has a Role and Personality. They must follow their Role card and play that member of the family, and play out their personality to the best of their ability.`,
       images: [
-        { url: '/assets/f6d6b46b95a615388c29cae4d74b4856eced8e91.png', caption: "The topic card of the first round" },
-        { url: '/assets/0a52bf845968d0d1d0387e7672fce18c01a36de5.png', caption: "" }
+        { url: '/assets/ghghg.jpg', caption: "Sweet and Sour Reunion photo" },
+        { url: '/assets/IMG_5971.jpg', caption: "Sweet and Sour Reunion photo" }
       ],
       details: [
         { label: "Players", value: "4-6" },
