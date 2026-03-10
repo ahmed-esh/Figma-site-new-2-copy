@@ -2,3 +2,31 @@
 @import './tailwind.css';
 @import './theme.css';
 @import './mobile.css';
+
+@keyframes camelRainFall {
+  0% {
+    transform: translate3d(0, -16vh, 0) rotate(var(--camel-tilt, 0deg));
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.32;
+  }
+  88% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate3d(var(--camel-sway, 24px), 115vh, 0) rotate(calc(var(--camel-tilt, 0deg) + 8deg));
+    opacity: 0;
+  }
+}
+
+.camel-rain {
+  position: absolute;
+  top: -12vh;
+  pointer-events: none;
+  user-select: none;
+  animation-name: camelRainFall;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  will-change: transform, opacity;
+}
