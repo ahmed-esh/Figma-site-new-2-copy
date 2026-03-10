@@ -1,8 +1,11 @@
 @font-face {
   font-family: 'Kuhlman Variable';
-  src: local('Kuhlman Variable'), local('KuhlmanVariable');
+  src:
+    url('../Fonts/fonts/Kuhlman[wdth,SEED]-Edu.woff2') format('woff2'),
+    url('../Fonts/fonts/Kuhlman[wdth,SEED]-Edu.woff') format('woff');
   font-style: normal;
   font-weight: 100 900;
+  font-stretch: 50% 200%;
   font-display: swap;
 }
 
