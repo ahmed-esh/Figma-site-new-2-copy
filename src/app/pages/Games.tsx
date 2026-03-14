@@ -92,8 +92,15 @@ function GameItem({ game, isExpanded, onToggle }: { game: GameData; isExpanded: 
         >
           {/* Header with title and close button */}
           <div className="flex items-start justify-between mb-6">
-            <div>
-              <p className="site-body-font font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] text-[38.491px] text-black mb-2">{game.title}</p>
+            <div className="flex items-center gap-4">
+              <p className="site-body-font font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] text-[38.491px] text-black">{game.title}</p>
+              <div className="h-0 relative w-[52px]">
+                <div className="absolute inset-[-7.36px_-2.63%_-7.36px_0]">
+                  <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 39 14.7279">
+                    <path d={svgPaths.p26b712c0} fill="#F27244" />
+                  </svg>
+                </div>
+              </div>
               <p className="site-body-font font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] text-[28px] text-black">{game.type}</p>
             </div>
             <div className="flex items-center gap-4">
@@ -212,7 +219,13 @@ function GameItem({ game, isExpanded, onToggle }: { game: GameData; isExpanded: 
     >
       <div className="flex items-center gap-4 flex-1 min-w-0">
         <p className="site-body-font font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] text-[38.491px] text-black text-nowrap">{game.title}</p>
-        <div className="bg-[#f27244] w-[1px] h-[40px] flex-shrink-0" />
+        <div className="h-0 relative w-[52px] shrink-0">
+          <div className="absolute inset-[-7.36px_-2.63%_-7.36px_0]">
+            <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 39 14.7279">
+              <path d={svgPaths.p26b712c0} fill="#F27244" />
+            </svg>
+          </div>
+        </div>
         <p className="site-body-font font-['Sofia_Sans:SemiBold',sans-serif] font-semibold leading-[normal] text-[38.491px] text-black text-nowrap">{game.type}</p>
       </div>
       <div className="flex items-center justify-center relative flex-shrink-0">
