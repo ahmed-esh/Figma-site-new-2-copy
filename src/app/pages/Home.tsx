@@ -259,28 +259,6 @@ export function Home() {
             <p className="mb-0">Ahmed</p>
             <p>Shuwehdi</p>
           </div>
-          <svg
-            aria-hidden="true"
-            className="absolute pointer-events-none left-[470px] top-[285px] w-[260px] h-[130px] z-[25]"
-            fill="none"
-            viewBox="0 0 260 130"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M20 18 C 70 0, 130 10, 155 42 C 175 67, 145 86, 114 74 C 89 64, 88 36, 106 25 C 121 17, 146 20, 176 40 C 200 56, 214 69, 228 82"
-              stroke="#f27244"
-              strokeWidth="5.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M220 66 L229 82 L210 82"
-              stroke="#f27244"
-              strokeWidth="5.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
           <div 
             ref={camelRef}
             className={`h-[429px] relative shrink-0 w-[290px] ${!camelPosition ? 'cursor-pointer' : ''}`}
