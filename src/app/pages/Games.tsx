@@ -249,6 +249,29 @@ export function Games() {
 
   const games: GameData[] = [
     {
+      title: "Vancation: Fast & Financial",
+      type: "Digital Card Strategy game",
+      status: 'P',
+      description: `Vancation: Fast & Financial is a 2D card strategy game where you play as an 18-year-old taking the family on a road trip, from the city you live in to your hometown. It is a way your family can guarantee that you have fully grown, matured, and are ready for the next chapter of your life as an adult. Driving a van between different regions of the country is not an easy task; you have to keep track of your limited budget, fuel, van condition, and morale. You have 20 days to finish the trip.
+
+Play action cards to advance time, choose and plan your route, and manage resources across rounds. Each round is divided into days, and each day is divided into 8 sections. Action cards occupy 1 to 4 sections of time, and you can only advance time by playing cards. At the end of each round, a rogue-lite style reward system helps shape your next run.
+
+Made for the 2026 Cool Math Game Jam.`,
+      images: [
+        { url: '/assets/S0wNU+.png', caption: "In Game Screenshot" },
+        { url: '/assets/VvIreS.png', caption: "In Game Screenshot" }
+      ],
+      links: [
+        { label: "Play on itch.io", url: "https://oldzombie14.itch.io/vancation-fast-financial" }
+      ],
+      details: [
+        { label: "Engine", value: "Unity" },
+        { label: "Duration", value: "20 minutes" },
+        { label: "Year", value: "2026" },
+        { label: "Team Size", value: "3 game designers" }
+      ]
+    },
+    {
       title: "Sweet and Sour Reunion",
       type: "Improv Party Game",
       status: 'P',
@@ -289,29 +312,6 @@ At first, progression is simple: click to spawn falling camels and unlock core s
         { label: "Duration", value: "~" },
         { label: "Year", value: "2026" },
         { label: "Team Size", value: "Solo" }
-      ]
-    },
-    {
-      title: "Vancation: Fast & Financial",
-      type: "2D Card Strategy Game",
-      status: 'P',
-      description: `Vancation: Fast & Financial is a 2D card strategy game where you play as an 18-year-old taking the family on a road trip, from the city you live in to your hometown. It is a way your family can guarantee that you have fully grown, matured, and are ready for the next chapter of your life as an adult. Driving a van between different regions of the country is not an easy task; you have to keep track of your limited budget, fuel, van condition, and morale. You have 20 days to finish the trip.
-
-Play action cards to advance time, choose and plan your route, and manage resources across rounds. Each round is divided into days, and each day is divided into 8 sections. Action cards occupy 1 to 4 sections of time, and you can only advance time by playing cards. At the end of each round, a rogue-lite style reward system helps shape your next run.
-
-Made for the 2026 Cool Math Game Jam.`,
-      images: [
-        { url: '/assets/S0wNU+.png', caption: "In Game Screenshot" },
-        { url: '/assets/VvIreS.png', caption: "In Game Screenshot" }
-      ],
-      links: [
-        { label: "Play on itch.io", url: "https://oldzombie14.itch.io/vancation-fast-financial" }
-      ],
-      details: [
-        { label: "Engine", value: "Unity" },
-        { label: "Duration", value: "~20 in-game days" },
-        { label: "Year", value: "2026" },
-        { label: "Team Size", value: "3 (Design, Programming, Art)" }
       ]
     },
     {
